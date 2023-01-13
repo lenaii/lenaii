@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang= "en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"conten="width=device-width,initia-scale=1">
+	<title>mine maybe?</title>
+	<link rel="sheetstyle">
+	<style>
+		body{
+			background:linear-gradient(115deg, #a70d2a 10%, #ff8674 90%);
+			height:100vh;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+		}
+		#gif{
+			height:100px;
+			width:100px;
+			position:center;
+		}
+		#btn{
+			margin-top:30px;
+			align-self:flex-start;
+			padding:5px 15px;
+			background:linear-gradient(115deg, #008b8b 10%, #4e9258 90%);
+			color:white;
+			border-radius: 5px;
+			border:none;
+			cursor:pointer;
+		}
+		#emcee {
+			cursor:pointer;
+			position:absolute;
+			margin-top:30px;
+			align-self:flex-start;
+			padding:5px 15px;
+			background:linear-gradient(115deg, #008b8b 10%, #4e9258 90%);
+			color:white;
+			border-radius: 5px;
+			border:none;
+		}
+	</style>
+</head>
+<body onload="ready()">
+	<div>
+		<h1>wanna go out together?</h1>
+		<br><img
+		src= "https://media.tenor.com/t_uyWQrC3bQAAAAM/kawaii-anime.gif" id="gif"/>
+		<br>
+		<button id="btn">yes</button>
+		<button id="emcee"> nope</button>
+	</div>
+	<script>
+		var caller = document.getElementById("emcee");
+		var btn = document.getElementById("btn");
+
+		function ready()
+		{
+			caller.onmouseenter = function (ev)
+			{
+				var randX = Math.floor(Math.random() * (window.innerWidth - 100));
+				var randY = Math.floor(Math.random() * (window.innerHeight - 100));
+				console.log([randX, randY]);
+				caller.style.left = randX + 'px';
+				caller.style.top = randY + 'px';
+			}
+			caller.onclick = function (ev) {
+				alert('u finally click it, but i take it as yes')
+			}
+			btn.onclick = function (ev) {
+				alert('ayok kapan?')
+			}
+		}
+	</script>
+</body>
+</html>
